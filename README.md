@@ -1,28 +1,23 @@
-# React + TypeScript + Vite
+# Fullstack Cypress-project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Starta projektet
 
-Currently, two official plugins are available:
+För att starta projektet behöver du:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Klona ned projektet/ladda ned zip-filen
+2. Öppna db.sql-filen som ligger i backend-mappen. Kopiera texten och kör mot en postgres-databas. Detta skapar tabellerna som behövs för att innehållet ska kunna hämtas och visas.
+3. I backend-mappen, skapa en .env-fil som innehåller variabeln för uppkoppling mot databasen, ex: PGURI=postgres://postgres:lösenord@localhost/postgres
+4. Gå in i backend och kör npm install.
+5. Gå till roten för projektet och kör npm install.
+6. Kör npm run dev i först backend-mappen och sen i rot-mappen.
+7. I en webbläsare, gå till adressen http://localhost:5173/
+8. Öppna en ny terminal i rotmappen. Kör npx open cypress.
 
-## Expanding the ESLint configuration
+## Mål som uppnåtts
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# cypress-project
+- Skriv minst ett E2E-test som använder it.
+- Skriv minst ett komponenttest som använder it. Komponenten måste inte kommunicera med ett backend.
+- Skriv minst ett “komplett” E2E-test som involverar frontend, backend och databas (och på så sätt är “end-to-end”). Testet ska kommunicera med frontend-delen, som i sin tur (via ett webbanrop) kommunicerar med backend-delen, som i sin tur kommunicerar med databasen. Använd inte mocking för detta.
+- Varken JavaScript eller JSX får användas. Använd TypeScript (och TSX, om React används) istället.
+  Använd inte Mocha direkt, utan skapa alla tester genom Cypress.
+- Inkludera en README.md fil som innehåller en kort beskrivning för hur man startar projektet och vilka mål som uppnåtts.

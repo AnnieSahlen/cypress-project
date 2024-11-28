@@ -2,5 +2,12 @@
   "compilerOptions": {
     "jsx": "preserve"
   },
-  "include": ["**/*.ts", "**/*.tsx", "e2e/spec.cy.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "e2e/spec.cy.ts",
+    "support/component.js",
+    "src",
+    "cypress.d.ts"
+  ]
 }
